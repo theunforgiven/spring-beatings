@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="themes/style/neon.css">
 
     <!-- Transition theme. More available in /themes/transition/ or create your own. -->
-    <link rel="stylesheet" href="themes/transition/fade.css">
+    <link rel="stylesheet" href="themes/transition/horizontal-slide.css">
 
     <!-- css for code syntax highlighting -->
     <link rel="stylesheet" href="lib/syntaxhighlighter/styles/shCore.css"/>
@@ -40,15 +40,24 @@
 <section class="slide">
     <h2>Simple Bean Example</h2>
 
-    <div class="slide">
-        <pre class="brush: js;">
-var greeter = function(name) {
-  return "Why hello there " + name;
+        <pre class="brush: groovy;">
+def "should close application context"() {
+    given:
+    Application application = new Application(null);
+
+    when:
+    application.executeApplication()
+
+    then:
+    1 * genericApplicationContext.close()
 }
-console.log(greeter("Joe"));
         </pre>
-    </div>
-    <div class="slide">
+</section>
+
+<section class="slide">
+    <h2>Advanced Bean Example</h2>
+
+    <div>
         <pre class="brush: groovy;">
 def "should close application context"() {
     given:
@@ -62,10 +71,6 @@ def "should close application context"() {
 }
         </pre>
     </div>
-</section>
-
-<section class="slide">
-    <h2>Advanced Bean Example</h2>
 </section>
 
 <!-- End slides. -->
