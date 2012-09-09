@@ -18,25 +18,27 @@
     <link rel="stylesheet" href="extensions/status/deck.status.css">
     <link rel="stylesheet" href="extensions/hash/deck.hash.css">
     <link rel="stylesheet" href="extensions/scale/deck.scale.css">
-
+    <link rel="stylesheet" href="extensions/toc/deck.toc.css">
     <!-- Style theme. More available in /themes/style/ or create your own. -->
-    <link rel="stylesheet" href="themes/style/web-2.0.css">
+    <link rel="stylesheet" href="themes/style/neon.css">
 
     <!-- Transition theme. More available in /themes/transition/ or create your own. -->
-    <link rel="stylesheet" href="themes/transition/horizontal-slide.css" type="text/css">
-    <link rel="stylesheet" href="lib/syntaxhighlighter/styles/shCore.css" type="text/css"/>
-    <link rel="stylesheet" href="lib/syntaxhighlighter/styles/shThemeMidnight.css" type="text/css"/>
+    <link rel="stylesheet" href="themes/transition/fade.css">
+
+    <!-- css for code syntax highlighting -->
+    <link rel="stylesheet" href="lib/syntaxhighlighter/styles/shCore.css"/>
+    <link rel="stylesheet" href="lib/syntaxhighlighter/styles/shThemeMidnight.css"/>
 </head>
 <body class="deck-container">
 
 <!-- Begin slides. Just make elements with a class of slide. -->
 
 <section class="slide" id="title-slide">
-    <h1>Spring</h1>
+    <h1>On Spring</h1>
 </section>
 
 <section class="slide">
-    <h2>Slide 2</h2>
+    <h2>Simple Bean Example</h2>
 
     <div class="slide">
         <pre class="brush: js;">
@@ -63,17 +65,14 @@ def "should close application context"() {
 </section>
 
 <section class="slide">
-    <div class="div">
-        <h2>Slide three</h2>
-        <ul class="slide">
-            <li>Slide three subsection</li>
-        </ul>
-    </div>
+    <h2>Advanced Bean Example</h2>
 </section>
 
 <!-- End slides. -->
 
 <!-- Begin extension snippets. Add or remove as needed. -->
+<!-- deck.tos snippet -->
+<div class="deck-toc"></div>
 
 <!-- deck.navigation snippet -->
 <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
@@ -111,6 +110,8 @@ def "should close application context"() {
 <script src="extensions/status/deck.status.js"></script>
 <script src="extensions/navigation/deck.navigation.js"></script>
 <script src="extensions/scale/deck.scale.js"></script>
+<script src="extensions/toc/deck.toc.js"></script>
+<script src="extensions/clone/deck.clone.js"></script>
 
 <script src="lib/syntaxhighlighter/scripts/shCore.js" type="text/javascript"></script>
 <script src="lib/syntaxhighlighter/scripts/shAutoloader.js" type="text/javascript"></script>
@@ -142,6 +143,7 @@ def "should close application context"() {
 
     $(function () {
         "use strict";
+        $.extend(true, $.deck.defaults, { countNested:false });
         $.deck('.slide');
     });
 </script>

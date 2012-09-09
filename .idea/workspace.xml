@@ -2,154 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d42c4c17-4308-4c8e-a3f6-929f539c33db" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/.rvmrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/webrick.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/style/neon.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/style/swiss.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/style/web-2.0.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/transition/fade.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/transition/horizontal-slide.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/transition/vertical-slide.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SlideShow.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/deck.core.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/deck.core.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/deck.core.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/goto/deck.goto.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/goto/deck.goto.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/goto/deck.goto.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/goto/deck.goto.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/hash/deck.hash.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/hash/deck.hash.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/hash/deck.hash.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/hash/deck.hash.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/menu/deck.menu.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/menu/deck.menu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/menu/deck.menu.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/navigation/deck.navigation.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/navigation/deck.navigation.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/navigation/deck.navigation.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/navigation/deck.navigation.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/scale/deck.scale.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/scale/deck.scale.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/scale/deck.scale.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/status/deck.status.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/status/deck.status.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/status/deck.status.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/status/deck.status.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jquery-1.8.0.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/jquery-1.8.0.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/LGPL-LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/MIT-LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/compass/_theme_template.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/compass/config.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/compass/shCore.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/compass/shCoreDefault.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/compass/shCoreDjango.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/compass/shCoreEclipse.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/compass/shCoreEmacs.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/compass/shCoreFadeToGrey.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/compass/shCoreMDUltra.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/compass/shCoreMidnight.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/compass/shCoreRDark.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/compass/shThemeDefault.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/compass/shThemeDjango.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/compass/shThemeEclipse.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/compass/shThemeEmacs.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/compass/shThemeFadeToGrey.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/compass/shThemeMDUltra.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/compass/shThemeMidnight.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/compass/shThemeRDark.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shAutoloader.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushAS3.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushAppleScript.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushBash.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushCSharp.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushColdFusion.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushCpp.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushCss.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushDelphi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushDiff.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushErlang.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushGroovy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushJScript.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushJava.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushJavaFX.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushPerl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushPhp.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushPlain.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushPowerShell.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushPython.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushRuby.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushSass.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushScala.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushSql.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushVb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shBrushXml.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shCore.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/scripts/shLegacy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/src/shAutoloader.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/src/shCore.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/src/shLegacy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/styles/shCore.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/styles/shCoreDefault.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/styles/shCoreDjango.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/styles/shCoreEclipse.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/styles/shCoreEmacs.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/styles/shCoreFadeToGrey.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/styles/shCoreMDUltra.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/styles/shCoreMidnight.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/styles/shCoreRDark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/styles/shThemeDefault.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/styles/shThemeDjango.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/styles/shThemeEclipse.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/styles/shThemeEmacs.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/styles/shThemeFadeToGrey.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/styles/shThemeMDUltra.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/styles/shThemeMidnight.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/styles/shThemeRDark.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/brushes/sass.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/brushes_tests.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/cases/001_basic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/cases/002_brushes.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/cases/003_script_tag.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/cases/004_url_parsing.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/cases/005_no_gutter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/cases/006_pad_line_numbers.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/cases/007_collapse.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/cases/007_collapse_interaction.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/cases/008_first_line.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/cases/009_class_name.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/cases/010_highlight.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/cases/011_smart_tabs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/cases/012_server_side.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/cases/013_html_script.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/cases/014_legacy.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/commonjs_tests.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/js/jquery-1.4.2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/js/qunit.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/js/qunit.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/syntaxhighlighter_tests.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/theme_tests.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/syntaxhighlighter/tests/webrick.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modernizr.custom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/style/neon.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/style/swiss.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/style/web-2.0.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/transition/fade.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/transition/horizontal-slide.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/themes/transition/vertical-slide.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/clone/deck.clone.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/toc/deck.toc.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/toc/deck.toc.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/toc/deck.toc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/extensions/toc/deck.toc.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="SlideShow.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -210,8 +69,19 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="30" selection-start="1234" selection-end="1234" vertical-scroll-proportion="0.4095064">
+            <state line="113" column="29" selection-start="3749" selection-end="3749" vertical-scroll-proportion="0.5978062">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="deck.toc.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/extensions/toc/deck.toc.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -290,6 +160,70 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SlideShow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SlideShow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extensions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="toc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SlideShow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SlideShow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extensions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SlideShow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SlideShow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="extensions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="clone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SlideShow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SlideShow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope">
@@ -310,13 +244,13 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="options.lastSelected" value="project.propVCSSupport.VCSs.Git" />
+    <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
   <component name="Regex">
     <option name="pos1" value="218" />
@@ -380,6 +314,17 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -403,17 +348,6 @@
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -452,7 +386,7 @@
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -472,7 +406,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24946581" sideWeight="0.6707589" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Regex" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Regex" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -556,9 +490,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/idea.jar!/resources/html5-schema/sectional.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="21" selection-start="355" selection-end="355" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/deck.core.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="206" column="24" selection-start="6006" selection-end="6008" vertical-scroll-proportion="-6.695167">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extensions/toc/deck.toc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="30" selection-start="1234" selection-end="1234" vertical-scroll-proportion="0.4095064">
+        <state line="113" column="29" selection-start="3749" selection-end="3749" vertical-scroll-proportion="0.5978062">
           <folding />
         </state>
       </provider>
