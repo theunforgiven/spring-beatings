@@ -28,6 +28,7 @@
     <!-- css for code syntax highlighting -->
     <link rel="stylesheet" href="lib/syntaxhighlighter/styles/shCore.css"/>
     <link rel="stylesheet" href="lib/syntaxhighlighter/styles/shThemeMidnight.css"/>
+    <script data-main="js/app.js" src="js/require.js"></script>
 </head>
 <body class="deck-container">
 
@@ -104,7 +105,7 @@ def "should close application context"() {
 <!-- End extension snippets. -->
 
 <!-- Required JS files. -->
-<script src="jquery-1.8.0.min.js"></script>
+<script src="js/jquery-1.8.1.min.js"></script>
 <script src="core/deck.core.js"></script>
 
 <!-- Extension JS files. Add or remove as needed. -->
@@ -118,38 +119,46 @@ def "should close application context"() {
 <script src="extensions/toc/deck.toc.js"></script>
 <script src="extensions/clone/deck.clone.js"></script>
 
-<script src="lib/syntaxhighlighter/scripts/shCore.js" type="text/javascript"></script>
-<script src="lib/syntaxhighlighter/scripts/shAutoloader.js" type="text/javascript"></script>
-
 <script type="text/javascript">
 
 </script>
 <!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
-    (function () {
-        function path() {
-            var args = arguments,
-                    result = []
-                    ;
-
-            for (var i = 0; i < args.length; i++)
-                result.push(args[i].replace('@', 'lib/syntaxhighlighter/scripts/'));
-
-            return result
-        }
-
-        SyntaxHighlighter.autoloader.apply(null, path(
-                'js jscript javascript  @shBrushJScript.js',
-                'groovy                 @shBrushGroovy.js'
-        ));
-
-        SyntaxHighlighter.all();
-    })();
-
-    $(function () {
-        "use strict";
-        $.extend(true, $.deck.defaults, { countNested:false });
-        $.deck('.slide');
+    requirejs.config({
+                         paths:{
+                             jquery:"js/jquery-1.8.1",
+                             shCore:"../lib/syntaxhighlighter/scripts/shCore",
+                             brush:"../lib/syntaxhighlighter/scripts"
+                         },
+                         shim:{
+                             'jquery':{
+                                 exports:function (jquery) {
+                                     return $.noConflict();
+                                 }
+                             },
+                             'shCore':{
+                                 exports:function (c) {
+                                     return {SyntaxHighlighter:SyntaxHighlighter};
+                                 }
+                             },
+                             'brush/shBrushGroovy':{
+                                 deps:['shCore']
+                             },
+                             'brush/shBrushJScript':{
+                                 deps:['shCore']
+                             }
+                         }
+                     })
+    ;
+    require(['jquery'], function ($) {
+        $(function () {
+            "use strict";
+            require(['shCore', 'brush/shBrushGroovy', 'brush/shBrushJScript'], function (SyntaxHighlighter, groovy, js) {
+                SyntaxHighlighter.SyntaxHighlighter.all();
+            });
+            $.extend(true, $.deck.defaults, { countNested:false });
+            $.deck('.slide');
+        });
     });
 </script>
 </body>
