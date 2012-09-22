@@ -1,0 +1,13 @@
+
+.deck-container .slide .subtitle {
+    text-align: center;
+    border-bottom-style: none;
+    padding-top: 0px;
+}
+
+.deck-container .slide .subtitle, .csstransforms .slide .vcenter {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 58%;
+}

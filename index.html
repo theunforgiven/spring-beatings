@@ -28,14 +28,25 @@
     <!-- css for code syntax highlighting -->
     <link rel="stylesheet" href="lib/syntaxhighlighter/styles/shCore.css"/>
     <link rel="stylesheet" href="lib/syntaxhighlighter/styles/shThemeMidnight.css"/>
-    <script data-main="js/app.js" src="js/require.js"></script>
+    <link rel="stylesheet" href="custom.css">
+    <script src="js/require.js"></script>
 </head>
 <body class="deck-container">
 
 <!-- Begin slides. Just make elements with a class of slide. -->
 
-<section class="slide" id="title-slide">
-    <h1>On Spring</h1>
+<section class="slide">
+    <h1>Spring Beatings</h1>
+
+    <h2 class="subtitle">or: How I Learned to Stop Worrying and Love the Magic</h2>
+</section>
+
+<section class="slide">
+    <h2>Beans</h2>
+    <ol>
+        <li>By default singletons</li>
+        <li>Has a lifetime controlled by Spring</li>
+    </ol>
 </section>
 
 <section class="slide">
@@ -106,36 +117,16 @@ def "should close application context"() {
 
 <!-- Required JS files. -->
 <script src="js/jquery-1.8.1.min.js"></script>
-<script src="core/deck.core.js"></script>
 
-<!-- Extension JS files. Add or remove as needed. -->
-<script src="core/deck.core.js"></script>
-<script src="extensions/hash/deck.hash.js"></script>
-<script src="extensions/menu/deck.menu.js"></script>
-<script src="extensions/goto/deck.goto.js"></script>
-<script src="extensions/status/deck.status.js"></script>
-<script src="extensions/navigation/deck.navigation.js"></script>
-<script src="extensions/scale/deck.scale.js"></script>
-<script src="extensions/toc/deck.toc.js"></script>
-<script src="extensions/clone/deck.clone.js"></script>
-
-<script type="text/javascript">
-
-</script>
-<!-- Initialize the deck. You can put this in an external file if desired. -->
 <script>
     requirejs.config({
                          paths:{
-                             jquery:"js/jquery-1.8.1",
                              shCore:"../lib/syntaxhighlighter/scripts/shCore",
-                             brush:"../lib/syntaxhighlighter/scripts"
+                             brush:"../lib/syntaxhighlighter/scripts",
+                             deck:"../core/deck.core",
+                             e:"../extensions/"
                          },
                          shim:{
-                             'jquery':{
-                                 exports:function (jquery) {
-                                     return $.noConflict();
-                                 }
-                             },
                              'shCore':{
                                  exports:function (c) {
                                      return {SyntaxHighlighter:SyntaxHighlighter};
@@ -148,16 +139,29 @@ def "should close application context"() {
                                  deps:['shCore']
                              }
                          }
-                     })
-    ;
-    require(['jquery'], function ($) {
-        $(function () {
-            "use strict";
-            require(['shCore', 'brush/shBrushGroovy', 'brush/shBrushJScript'], function (SyntaxHighlighter, groovy, js) {
-                SyntaxHighlighter.SyntaxHighlighter.all();
+                     });
+
+    require(['shCore', 'brush/shBrushGroovy', 'brush/shBrushJScript'], function (SyntaxHighlighter, groovy, js) {
+        SyntaxHighlighter.SyntaxHighlighter.highlight();
+    });
+
+    require(['deck'], function (deck) {
+        require(["extensions/hash/deck.hash",
+                    "extensions/hash/deck.hash" ,
+                    "extensions/menu/deck.menu" ,
+                    "extensions/goto/deck.goto" ,
+                    "extensions/status/deck.status" ,
+                    "extensions/navigation/deck.navigation" ,
+                    "extensions/scale/deck.scale" ,
+//                    "extensions/toc/deck.toc" ,
+                    "extensions/clone/deck.clone"], function () {
+
+
+            $(function () {
+                "use strict";
+                $.extend(true, $.deck.defaults, { countNested:false });
+                $.deck('.slide');
             });
-            $.extend(true, $.deck.defaults, { countNested:false });
-            $.deck('.slide');
         });
     });
 </script>
