@@ -1,3 +1,26 @@
+/* remove scroll bars from syntax highligher widgets */
+.syntaxhighlighter { overflow-y: hidden !important; }
+
+.image-container div ul li:first-child {
+    list-style:none
+}
+
+.image-container-left {
+    width: 50%;
+    display: inline;
+    float:left;
+}
+
+.image-container-right {
+    width: 50%;
+    display: inline;
+    float:left;
+}
+
+.image-container {
+width: 100%;
+}
+
 .deck-container .slide .subtitle {
     text-align: center;
     border-bottom-style: none;

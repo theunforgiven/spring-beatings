@@ -78,6 +78,7 @@ class SampleSpringAnnotatedConfiguration {
 
 <section class="slide">
     <h2>Application Context Creation</h2>
+
     <h3>Creating an Application Context With an Xml Configuration</h3>
     <pre class="brush: groovy;">
 class Main {
@@ -103,20 +104,11 @@ class Main {
 <section class="slide">
     <h2>Beans</h2>
     <ul>
-        <li>By default singletons</li>
         <li>Has a lifetime controlled by Spring</li>
         <li>Can be defined by either an XML configuration file or via a an annotated class configuration</li>
         <li>Configuration by XML
         <pre class="brush: xml;">
-&lt;?xml version="1.0" encoding="UTF-8"?>
-&lt;beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:beans="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-                           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
-
     &lt;beans:bean class="lt.nsg.SpringDemo.SpringSimpleBeanDemo.service.Service" />
-&lt;/beans>
         </pre>
         </li>
         <li>Configuration by annotated configuration class
@@ -131,6 +123,47 @@ class SampleSpringAnnotatedConfiguration {
         </pre>
         </li>
     </ul>
+</section>
+
+<section class="slide">
+    <h2>Bean Scopes</h2>
+
+    <div class="image-container">
+        <div class="image-container-left">
+            <ul>
+                <li><img src="img/spring/singleton.png"/></li>
+                <li>Singleton annotation configuration example
+            <pre class="brush: groovy;">
+@Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+class Service {
+}
+            </pre>
+                </li>
+                <li>Singleton xml configuration example
+                <pre class="brush: xml;">
+                    &lt;beans:bean class="Service" scope="singleton" />
+                </pre>
+                </li>
+            </ul>
+        </div>
+        <div class="image-container-right">
+            <ul>
+                <li><img src="img/spring/prototype.png"/></li>
+                <li>Prototype configuration annotation example
+            <pre class="brush: groovy;">
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+class Service {
+}
+            </pre>
+                </li>
+                <li>Prototype xml configuration example
+                <pre class="brush: xml;">
+                    &lt;beans:bean class="Service" scope="prototype" />
+                </pre>
+                </li>
+            </ul>
+        </div>
+    </div>
 </section>
 
 <section class="slide">
