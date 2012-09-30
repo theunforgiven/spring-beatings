@@ -48,6 +48,7 @@
         <li>Should rarely be referenced to resolve an object</li>
         <li>Creating an application context to consume an xml configuration</li>
     </ul>
+    <img src="img/spring/container-magic.png"/>
 </section>
 
 <section class="slide">
@@ -73,6 +74,30 @@ class SampleSpringAnnotatedConfiguration {
                 </pre>
         </li>
     </ul>
+</section>
+
+<section class="slide">
+    <h2>Application Context Creation</h2>
+    <h3>Creating an Application Context With an Xml Configuration</h3>
+    <pre class="brush: groovy;">
+class Main {
+    public static void main(String[] args) {
+        def applicationContext = GenericXmlApplicationContext(new ClassPathResource("/applicationContext.xml"))
+        def service = applicationContext.getBean(Service)
+        service.run()
+    }
+}
+    </pre>
+    <h3>Creating an Application Context With an Annotated Configuration Class</h3>
+    <pre class="brush: groovy;">
+class Main {
+    public static void main(String[] args) {
+        def applicationContext = new AnnotationConfigApplicationContext(DemoAnnotationConfiguration.class)
+        def service = applicationContext.getBean(Service)
+        service.run()
+    }
+}
+    </pre>
 </section>
 
 <section class="slide">
