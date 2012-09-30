@@ -42,28 +42,70 @@
 </section>
 
 <section class="slide">
-    <h2>Beans</h2>
-    <ol>
-        <li>By default singletons</li>
-        <li>Has a lifetime controlled by Spring</li>
-    </ol>
+    <h2>Application Context</h2>
+    <ul>
+        <li>Responsible for controlling the creation and lifecycle of the Beans in the application</li>
+        <li>Should rarely be referenced to resolve an object</li>
+        <li>Creating an application context to consume an xml configuration</li>
+    </ul>
 </section>
 
 <section class="slide">
-    <h2>Simple Bean Example</h2>
+    <h2>Application Context Configuration</h2>
+    <ul>
+        <li>XML files, annotated classes or a mixture of the two can be used</li>
+        <li>Example annotated configuration class
+            <pre class="brush: groovy;">
+@Configuration
+class SampleSpringAnnotatedConfiguration {
+}
+            </pre>
+        </li>
+        <li>Example xml configuration file
+    <pre class="brush: xml;">
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:beans="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+&lt;/beans>
+                </pre>
+        </li>
+    </ul>
+</section>
 
+<section class="slide">
+    <h2>Beans</h2>
+    <ul>
+        <li>By default singletons</li>
+        <li>Has a lifetime controlled by Spring</li>
+        <li>Can be defined by either an XML configuration file or via a an annotated class configuration</li>
+        <li>Configuration by XML
+        <pre class="brush: xml;">
+&lt;?xml version="1.0" encoding="UTF-8"?>
+&lt;beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:beans="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+    &lt;beans:bean class="lt.nsg.SpringDemo.SpringSimpleBeanDemo.service.Service" />
+&lt;/beans>
+        </pre>
+        </li>
+        <li>Configuration by annotated configuration class
         <pre class="brush: groovy;">
-def "should close application context"() {
-    given:
-    Application application = new Application(null);
-
-    when:
-    application.executeApplication()
-
-    then:
-    1 * genericApplicationContext.close()
+@Configuration
+class SampleSpringAnnotatedConfiguration {
+    @Bean
+    Service createService() {
+        new Service()
+    }
 }
         </pre>
+        </li>
+    </ul>
 </section>
 
 <section class="slide">
@@ -132,6 +174,9 @@ def "should close application context"() {
                                      return {SyntaxHighlighter:SyntaxHighlighter};
                                  }
                              },
+                             'brush/shBrushXml':{
+                                 deps:['shCore']
+                             },
                              'brush/shBrushGroovy':{
                                  deps:['shCore']
                              },
@@ -141,7 +186,9 @@ def "should close application context"() {
                          }
                      });
 
-    require(['shCore', 'brush/shBrushGroovy', 'brush/shBrushJScript'], function (SyntaxHighlighter, groovy, js) {
+    require(['shCore', 'brush/shBrushGroovy', 'brush/shBrushJScript', 'brush/shBrushXml'], function (SyntaxHighlighter, groovy, js) {
+        SyntaxHighlighter.SyntaxHighlighter.defaults['gutter'] = false;
+        SyntaxHighlighter.SyntaxHighlighter.defaults['toolbar'] = false;
         SyntaxHighlighter.SyntaxHighlighter.highlight();
     });
 
