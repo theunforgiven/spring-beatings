@@ -41,6 +41,7 @@
 <section class="slide">
    <h1>Spring Beatings</h1>
    <img class="title-image" src="img/cowboy-bomb.jpg" alt="Yeehaw"/>
+
    <h2 class="subtitle">or: How I Learned to Stop Worrying and Love the Magic</h2>
 </section>
 
@@ -77,7 +78,7 @@
 <section class="slide">
    <h2>AbstractSingletonProxyFactoryBean: Huh?</h2>
    <ul>
-      <li>Second step of spring configuration: Enable Logging</li>
+      <li>Second step of Spring configuration: Enable Logging</li>
    </ul>
     <pre class="brush: xml;">
 &lt;properties>
@@ -109,13 +110,14 @@
 </section>
 
 <section class="slide">
-   <h2>Brief pause for propaganda</h2>
+   <h2>Brief Pause For Propaganda</h2>
    <ul>
       <li>Favor constructor injection</li>
       <li>Avoid property injection</li>
       <li>Prefer autowiring and component scanning instead of manual configuration</li>
       <li>Annotations > XML</li>
       <li>Prefer Spring's way</li>
+      <li>Start with Spring from day one</li>
    </ul>
 </section>
 
@@ -262,7 +264,7 @@ class ExampleBean implements InitializingBean, DisposableBean {
 }
    </pre>
    <ul>
-      <li>Example XML configuration which uses the convential spring method names</li>
+      <li>Example XML configuration which uses the convential Spring method names</li>
    </ul>
    <pre class="brush: xml;">
 &lt;bean id="exampleInitBean" class="ExampleBean"
@@ -375,25 +377,31 @@ class Service {
    <h2>Testing Spring</h2>
    <ul>
       <li>Spring supports testing via JUnit</li>
-      <li>There is a Spock extension for testing spring</li>
+      <li>There is a Spock extension for testing Spring</li>
       <li>Test context is cached based on the configuration resources loaded, not rebuilt every test</li>
       <li>@ContextConfiguration annotation is used to specify the context that will be used during the tests</li>
       <li>@ActiveProfiles annotation is used to specify which profiles are active during the test</li>
       <li>@DirtiesContext annotation can be used to control if a test causes a context to be rebuilt after a test, test class, or after every test.</li>
       <li>@TestExecutionListeners can be used to add context listeners</li>
       <li>Example test execution listeners</li>
-      <ul>
-         <li>@DependencyInjectionTestExecutionListener</li>
+      <li>
          <ul>
-            <li>Will allow the use of @Autowired properties in test classes</li>
-            <li>This is enabled by default</li>
+            <li>@DependencyInjectionTestExecutionListener</li>
+            <li>
+               <ul>
+                  <li>Will allow the use of @Autowired properties in test classes</li>
+                  <li>This is enabled by default</li>
+               </ul>
+            </li>
+            <li>@TransactionalTestExecutionListener</li>
+            <li>
+               <ul>
+                  <li>Will run tests annotated with @Transactional in a transaction and roll back any changes after the test is run</li>
+                  <li>When testing ORM code (Specifically hibernate) the ORM must flush all changes to the database to avoid false positives</li>
+               </ul>
+            </li>
          </ul>
-         <li>@TransactionalTestExecutionListener</li>
-         <ul>
-            <li>Will run tests annotated with @Transactional in a transaction and roll back any changes after the test is run</li>
-            <li>When testing ORM code (Specifically hibernate) the ORM must flush all changes to the database to avoid false positives</li>
-         </ul>
-      </ul>
+      </li>
    </ul>
 </section>
 
