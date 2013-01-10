@@ -319,7 +319,7 @@ public class PropertyService {
    <h2>Meta Annotations</h2>
    <ul>
       <li>Due to what seems to be a bug in groovy an example meta-annotation in java</li>
-      <li>Reduces duplicatio</li>
+      <li>Reduces duplication</li>
    </ul>
     <pre class="brush: java;">
 @Target(ElementType.TYPE)
@@ -351,7 +351,7 @@ class ProfilesConfiguration {}
    <h2>Spring AOP - Aspect Oriented Programming</h2>
    <ul>
       <li>Spring provides rich support for AOP</li>
-      <li>Used to implement bean scoping and other cross cutting Spring services such as annotation transaction management</li>
+      <li>Used to implement Bean scoping and other cross cutting Spring services such as annotation transaction management</li>
       <li>Can use either J2SE dynamic proxies or CGLIB proxies</li>
       <li>J2SE dynamic proxies can only be used with interfaces</li>
       <li>CGLIB proxies can be used with classes as well as interfaces</li>
@@ -365,7 +365,7 @@ class ProfilesConfiguration {}
 &lt;aop:config proxy-target-class="true">
    </pre>
    <ul>
-      <li>Can be set explicitly with the @Scope annotation</li>
+      <li>Can be set explicitly for a specific Bean with the @Scope annotation</li>
    </ul>
    <pre class="brush: groovy;">
 @Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON, proxyMode = ScopedProxyMode.TARGET_CLASS)
@@ -378,11 +378,11 @@ class Service {
    <h2>Testing Spring</h2>
    <ul>
       <li>Spring supports testing via JUnit</li>
-      <li>There is a Spock extension for testing Spring</li>
+      <li>There is a Spock extension (spock-spring) for testing Spring. Once the extension dependency is added to the classpath Spring testing annotations just work</li>
       <li>Test context is cached based on the configuration resources loaded, not rebuilt every test</li>
       <li>@ContextConfiguration annotation is used to specify the context that will be used during the tests</li>
       <li>@ActiveProfiles annotation is used to specify which profiles are active during the test</li>
-      <li>@DirtiesContext annotation can be used to control if a test causes a context to be rebuilt after a test, test class, or after every test.</li>
+      <li>@DirtiesContext annotation can be used to control if a test causes a context to be rebuilt after a test, test class, or after every test</li>
       <li>@TestExecutionListeners can be used to add context listeners</li>
       <li>Example test execution listeners</li>
       <ul>
@@ -404,10 +404,11 @@ class Service {
    <ul>
       <li>Spring can wrap methods wrapped in @Transactional in a transaction</li>
       <li>Nested calls which call other @Transactional annotated methods have options to join the transaction, start a new transaction, or error to prevent nesting transactional method calls</li>
-      <li>Spring coorindates the transactions via a TransactionManager</li>
+      <li>Spring coorindates the transactions via a PlatformTransactionManager</li>
+      <li>Can be used with Hibernate and JDBC, but avoid mixing them. If you need JDBC access and Hibernate is being used, use its facilities for running raw SQL</li>
       <li>The TransactionManager uses the datasource to coordinate transactions between calls</li>
       <li>Trnasactions can be scoped to a web request (if using Spring MVC) or to a thread local variable</li>
-      <li>It is possible to mix methods annotated with @Transactional and programmatic control of transactions via </li>
+      <li>It is possible to mix methods annotated with @Transactional and programmatic control of transactions via code</li>
    </ul>
    <pre class="brush: groovy;">
 public class SimpleService {
