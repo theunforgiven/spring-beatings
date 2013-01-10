@@ -375,31 +375,6 @@ class Service {
 </section>
 
 <section class="slide">
-   <h2>Testing Spring</h2>
-   <ul>
-      <li>Spring supports testing via JUnit</li>
-      <li>There is a Spock extension (spock-spring) for testing Spring. Once the extension dependency is added to the classpath Spring testing annotations just work</li>
-      <li>Test context is cached based on the configuration resources loaded, not rebuilt every test</li>
-      <li>@ContextConfiguration annotation is used to specify the context that will be used during the tests</li>
-      <li>@ActiveProfiles annotation is used to specify which profiles are active during the test</li>
-      <li>@DirtiesContext annotation can be used to control if a test causes a context to be rebuilt after a test, test class, or after every test</li>
-      <li>@TestExecutionListeners can be used to add context listeners</li>
-      <li>Example test execution listeners</li>
-      <ul>
-         <li>@DependencyInjectionTestExecutionListener</li>
-         <ul>
-            <li>Will allow the use of @Autowired properties in test classes</li>
-            <li>This is enabled by default</li>
-         </ul>
-         <li>@TransactionalTestExecutionListener</li>
-         <ul>
-            <li>Will run tests annotated with @Transactional in a transaction and roll back any changes after the test is run</li>
-            <li>When testing ORM code (Specifically hibernate) the ORM must flush all changes to the database to avoid false positives</li>
-         </ul>
-      </ul>
-   </ul>
-</section>
-<section class="slide">
    <h2>Briefly: @Transactional</h2>
    <ul>
       <li>Spring can wrap methods wrapped in @Transactional in a transaction</li>
@@ -427,6 +402,33 @@ public class SimpleService {
 }
    </pre>
 </section>
+
+<section class="slide">
+   <h2>Testing Spring</h2>
+   <ul>
+      <li>Spring supports testing via JUnit</li>
+      <li>There is a Spock extension (spock-spring) for testing Spring. Once the extension dependency is added to the classpath Spring testing annotations just work</li>
+      <li>Test context is cached based on the configuration resources loaded, not rebuilt every test</li>
+      <li>@ContextConfiguration annotation is used to specify the context that will be used during the tests</li>
+      <li>@ActiveProfiles annotation is used to specify which profiles are active during the test</li>
+      <li>@DirtiesContext annotation can be used to control if a test causes a context to be rebuilt after a test, test class, or after every test</li>
+      <li>@TestExecutionListeners can be used to add context listeners</li>
+      <li>Example test execution listeners</li>
+      <ul>
+         <li>@DependencyInjectionTestExecutionListener</li>
+         <ul>
+            <li>Will allow the use of @Autowired properties in test classes</li>
+            <li>This is enabled by default</li>
+         </ul>
+         <li>@TransactionalTestExecutionListener</li>
+         <ul>
+            <li>Will run tests annotated with @Transactional in a transaction and roll back any changes after the test is run</li>
+            <li>When testing ORM code (Specifically hibernate) the ORM must flush all changes to the database to avoid false positives</li>
+         </ul>
+      </ul>
+   </ul>
+</section>
+
 <section class="slide">
    <h2>Testing Property Sources</h2>
     <pre class="brush: groovy;">
