@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="lib/syntaxhighlighter/styles/shCore.css"/>
     <link rel="stylesheet" href="lib/syntaxhighlighter/styles/shThemeMidnight.css"/>
     <link rel="stylesheet" href="custom.css">
+    <script src="js/jquery-1.8.1.min.js"></script>
     <script src="js/require.js"></script>
 </head>
 <body class="deck-container">
@@ -39,6 +40,74 @@
     <h1>Spring Beatings</h1>
 
     <h2 class="subtitle">or: How I Learned to Stop Worrying and Love the Magic</h2>
+</section>
+
+<section class="slide">
+    <h2>Getting Started</h2>
+    <ul>
+        <li>First step add Spring core dependency dependency</li>
+    </ul>
+    <pre class="brush: xml;">
+&lt;properties>
+    &lt;spring.version>3.2.0.RELEASE&lt;/spring.version>
+&lt;/properties>
+&lt;dependency>
+    &lt;groupId>org.springframework&lt;/groupId>
+    &lt;artifactId>spring-core&lt;/artifactId>
+    &lt;version>${spring.version}&lt;/version>
+    &lt;exclusions>
+        &lt;exclusion>
+            &lt;artifactId>commons-logging&lt;/artifactId>
+            &lt;groupId>commons-logging&lt;/groupId>
+        &lt;/exclusion>
+    &lt;/exclusions>
+&lt;/dependency>
+    </pre>
+</section>
+
+<section class="slide">
+    <h2>AbstractSingletonProxyFactoryBean: Huh?</h2>
+    <ul>
+        <li>Second step of spring configuration: Enable Logging</li>
+    </ul>
+    <pre class="brush: xml;">
+&lt;properties>
+    &lt;logback-classic.version>1.0.9&lt;/logback-classic.version>
+    &lt;slf4j.version>1.7.2&lt;/slf4j.version>
+&lt;/properties>
+&lt;dependency>
+    &lt;groupId>ch.qos.logback&lt;/groupId>
+    &lt;artifactId>logback-classic&lt;/artifactId>
+    &lt;version>${logback-classic.version}&lt;/version>
+    &lt;exclusions>
+        &lt;exclusion>
+            &lt;artifactId>slf4j-api&lt;/artifactId>
+            &lt;groupId>org.slf4j&lt;/groupId>
+        &lt;/exclusion>
+    &lt;/exclusions>
+&lt;/dependency>
+&lt;dependency>
+    &lt;groupId>org.slf4j&lt;/groupId>
+    &lt;artifactId>slf4j-api&lt;/artifactId>
+    &lt;version>${slf4j.version}&lt;/version>
+&lt;/dependency>
+&lt;dependency>
+    &lt;groupId>org.slf4j&lt;/groupId>
+    &lt;artifactId>jcl-over-slf4j&lt;/artifactId>
+    &lt;version>${slf4j.version}&lt;/version>
+&lt;/dependency>
+    </pre>
+</section>
+
+<section class="slide">
+    <h2>Brief pause for propaganda</h2>
+    <ul>
+        <li>Favor constructor injection</li>
+        <li>Avoid property injection</li>
+        <li>Prefer autowiring and component scanning instead of manual configuration</li>
+        <li>Annotations > XML</li>
+        <li>Prefer Spring's way</li>
+    </ul>
 </section>
 
 <section class="slide">
@@ -55,6 +124,7 @@
     <h2>Application Context Configuration</h2>
     <ul>
         <li>XML files, annotated classes or a mixture of the two can be used</li>
+        <li>Annotated configuration files will override xml files</li>
         <li>Example annotated configuration class
             <pre class="brush: groovy;">
 @Configuration
@@ -69,7 +139,7 @@ class SampleSpringAnnotatedConfiguration {
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:beans="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-                           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+                           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 &lt;/beans>
                 </pre>
         </li>
@@ -167,22 +237,140 @@ class Service {
 </section>
 
 <section class="slide">
-    <h2>Advanced Bean Example</h2>
-
-    <div>
-        <pre class="brush: groovy;">
-def "should close application context"() {
-    given:
-    Application application = new Application(null);
-
-    when:
-    application.executeApplication()
-
-    then:
-    1 * genericApplicationContext.close()
+    <h2>Property Source</h2>
+    <pre class="brush: groovy;">
+@Configuration
+@PropertySource("classpath:lt/nsg/gms/propertysource/property-source-test.properties")
+@ComponentScan(basePackageClasses = PropertySourceTest)
+class PropertySourceTestConfiguration {
 }
-        </pre>
-    </div>
+
+@Component
+public class PropertyService {
+    public static final String MISSING_PROPERTY_DEFAULT_VALUE = "i'm not /really/ here"
+    private final Environment env
+
+    @Autowired
+    PropertyService(Environment env) {
+        this.env = env
+    }
+
+    String getPropertyValue() {
+        return env.getProperty("property.value")
+    }
+
+    String getRequiredPropertyValue() {
+        return env.getRequiredProperty("property.missing")
+    }
+
+    String getMissingPropertyWithDefaultValue() {
+        return env.getProperty("property.missing", MISSING_PROPERTY_DEFAULT_VALUE)
+    }
+}
+    </pre>
+</section>
+
+<section class="slide">
+    <h2>Profiles</h2>
+    <pre class="brush: groovy;">
+@ContextConfiguration(classes = ProfilesTestConfiguration)
+@ActiveProfiles("test")
+class ProfileTest extends Specification {
+    @Autowired MissleController misscleControl
+    def "should get services that are in the test profile"() {
+        expect: !misscleControl.launch()
+    }
+}
+interface MissleController { boolean launch() }
+
+@Component @Profile("production")
+class Pentagon implements MissleController { boolean launch() { true } }
+
+@Component @Profile("test")
+class MockMissleController implements MissleController { boolean launch() { false } }
+
+@Configuration @ComponentScan(basePackageClasses = ProfileTest)
+class ProfilesTestConfiguration {}
+    </pre>
+</section>
+
+<section class="slide">
+    <h2>Meta Annotations</h2>
+    <ul>
+        <li>Due to what seems to be a bug in groovy an example meta-annotation in java</li>
+    </ul>
+    <pre class="brush: java;">
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Component
+@Profile("test")
+public @interface TestComponent {
+}
+    </pre>
+</section>
+
+<section class="slide">
+    <h2>Testing Property Sources</h2>
+    <pre class="brush: groovy;">
+@ContextConfiguration(classes = PropertySourceTestConfiguration)
+class PropertySourceTest extends Specification {
+    @Autowired
+    PropertyService service
+
+    def "should be able to specify a default value if the property is missing"() {
+        expect:
+        service.getMissingPropertyWithDefaultValue() == PropertyService.MISSING_PROPERTY_DEFAULT_VALUE
+    }
+
+    def "should read a property from the file"() {
+        expect:
+        service.getPropertyValue() == "a property value"
+    }
+
+    def "should throw an exception if required properties can not be found"() {
+        when:
+        service.getRequiredPropertyValue()
+        then:
+        thrown(IllegalStateException)
+    }
+}
+    </pre>
+</section>
+
+<section class="slide">
+    <h2>Testing Profiles</h2>
+    <pre class="brush: groovy;">
+@ContextConfiguration(classes = ProfilesTestConfiguration)
+@ActiveProfiles("test")
+class ProfileTest extends Specification {
+    @Autowired MissleController misscleControl
+    def "should get services that are in the test profile"() {
+        expect: !missleControl.launch()
+    }
+}
+interface MissleController { boolean launch() }
+
+@Component @Profile("production")
+class Pentagon implements MissleController { boolean launch() { true } }
+
+@Component @Profile("test")
+class MockMissleController implements MissleController { boolean launch() { false } }
+
+@Configuration @ComponentScan(basePackageClasses = ProfileTest)
+class ProfilesTestConfiguration {}
+    </pre>
+</section>
+
+<section class="slide">
+    <h2>Final Notes</h2>
+    <ul>
+        <li>The Spring documentation is outstanding</li>
+        <li>Fighting the framework will bite you every time</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h1>Fin</h1>
 </section>
 
 <!-- End slides. -->
@@ -215,57 +403,57 @@ def "should close application context"() {
 
 <!-- End extension snippets. -->
 
-<!-- Required JS files. -->
-<script src="js/jquery-1.8.1.min.js"></script>
-
 <script>
+    $('.slide').hide();
     requirejs.config({
-                         paths:{
-                             shCore:"../lib/syntaxhighlighter/scripts/shCore",
-                             brush:"../lib/syntaxhighlighter/scripts",
-                             deck:"../core/deck.core",
-                             e:"../extensions/"
+                         paths: {
+                             shCore: "../lib/syntaxhighlighter/scripts/shCore",
+                             brush: "../lib/syntaxhighlighter/scripts",
+                             deck: "../core/deck.core",
+                             e: "../extensions/"
                          },
-                         shim:{
-                             'shCore':{
-                                 exports:function (c) {
-                                     return {SyntaxHighlighter:SyntaxHighlighter};
+                         shim: {
+                             'shCore': {
+                                 exports: function (c) {
+                                     return {SyntaxHighlighter: SyntaxHighlighter};
                                  }
                              },
-                             'brush/shBrushXml':{
-                                 deps:['shCore']
+                             'brush/shBrushXml': {
+                                 deps: ['shCore']
                              },
-                             'brush/shBrushGroovy':{
-                                 deps:['shCore']
+                             'brush/shBrushGroovy': {
+                                 deps: ['shCore']
                              },
-                             'brush/shBrushJScript':{
-                                 deps:['shCore']
+                             'brush/shBrushJava': {
+                                 deps: ['shCore']
+                             },
+                             'brush/shBrushJScript': {
+                                 deps: ['shCore']
                              }
                          }
                      });
-
-    require(['shCore', 'brush/shBrushGroovy', 'brush/shBrushJScript', 'brush/shBrushXml'], function (SyntaxHighlighter, groovy, js) {
-        SyntaxHighlighter.SyntaxHighlighter.defaults['gutter'] = false;
-        SyntaxHighlighter.SyntaxHighlighter.defaults['toolbar'] = false;
-        SyntaxHighlighter.SyntaxHighlighter.highlight();
-    });
-
     require(['deck'], function (deck) {
-        require(["extensions/hash/deck.hash",
-                    "extensions/hash/deck.hash" ,
-                    "extensions/menu/deck.menu" ,
-                    "extensions/goto/deck.goto" ,
-                    "extensions/status/deck.status" ,
-                    "extensions/navigation/deck.navigation" ,
-                    "extensions/scale/deck.scale" ,
+        require(['shCore', 'brush/shBrushGroovy', 'brush/shBrushJScript', 'brush/shBrushXml', 'brush/shBrushJava'], function (SyntaxHighlighter, groovy, js, java) {
+            SyntaxHighlighter.SyntaxHighlighter.defaults['gutter'] = false;
+            SyntaxHighlighter.SyntaxHighlighter.defaults['toolbar'] = false;
+            SyntaxHighlighter.SyntaxHighlighter.highlight();
+
+            require(["extensions/hash/deck.hash",
+                        "extensions/hash/deck.hash" ,
+                        "extensions/menu/deck.menu" ,
+                        "extensions/goto/deck.goto" ,
+                        "extensions/status/deck.status" ,
+                        "extensions/navigation/deck.navigation" ,
+                        "extensions/scale/deck.scale" ,
 //                    "extensions/toc/deck.toc" ,
-                    "extensions/clone/deck.clone"], function () {
+                        "extensions/clone/deck.clone"], function () {
 
-
-            $(function () {
-                "use strict";
-                $.extend(true, $.deck.defaults, { countNested:false });
-                $.deck('.slide');
+                $(function () {
+                    "use strict";
+                    $.extend(true, $.deck.defaults, { countNested: false });
+                    $.deck('.slide');
+                    $('.slide').show();
+                });
             });
         });
     });
