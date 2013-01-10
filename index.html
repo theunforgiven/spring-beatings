@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=1024, user-scalable=no">
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+   <meta name="viewport" content="width=1024, user-scalable=no">
 
-    <title>Spring Beatings</title>
-    <!-- Required Modernizr file -->
-    <script src="modernizr.custom.js"></script>
-    <!-- Required stylesheet -->
-    <link rel="stylesheet" href="core/deck.core.css">
+   <title>Spring Beatings</title>
+   <!-- Required Modernizr file -->
+   <script src="modernizr.custom.js"></script>
+   <!-- Required stylesheet -->
+   <link rel="stylesheet" href="core/deck.core.css">
 
-    <!-- Extension CSS files go here. Remove or add as needed. -->
-    <link rel="stylesheet" href="extensions/goto/deck.goto.css">
-    <link rel="stylesheet" href="extensions/menu/deck.menu.css">
-    <link rel="stylesheet" href="extensions/navigation/deck.navigation.css">
-    <link rel="stylesheet" href="extensions/status/deck.status.css">
-    <link rel="stylesheet" href="extensions/hash/deck.hash.css">
-    <link rel="stylesheet" href="extensions/scale/deck.scale.css">
-    <link rel="stylesheet" href="extensions/toc/deck.toc.css">
-    <!-- Style theme. More available in /themes/style/ or create your own. -->
-    <link rel="stylesheet" href="themes/style/neon.css">
+   <!-- Extension CSS files go here. Remove or add as needed. -->
+   <link rel="stylesheet" href="extensions/goto/deck.goto.css">
+   <link rel="stylesheet" href="extensions/menu/deck.menu.css">
+   <link rel="stylesheet" href="extensions/navigation/deck.navigation.css">
+   <link rel="stylesheet" href="extensions/status/deck.status.css">
+   <link rel="stylesheet" href="extensions/hash/deck.hash.css">
+   <link rel="stylesheet" href="extensions/scale/deck.scale.css">
+   <link rel="stylesheet" href="extensions/toc/deck.toc.css">
+   <!-- Style theme. More available in /themes/style/ or create your own. -->
+   <link rel="stylesheet" href="themes/style/neon.css">
 
-    <!-- Transition theme. More available in /themes/transition/ or create your own. -->
-    <link rel="stylesheet" href="themes/transition/horizontal-slide.css">
+   <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+   <link rel="stylesheet" href="themes/transition/horizontal-slide.css">
 
-    <!-- css for code syntax highlighting -->
-    <link rel="stylesheet" href="lib/syntaxhighlighter/styles/shCore.css"/>
-    <link rel="stylesheet" href="lib/syntaxhighlighter/styles/shThemeMidnight.css"/>
-    <link rel="stylesheet" href="custom.css">
-    <script src="js/jquery-1.8.1.min.js"></script>
-    <script src="js/require.js"></script>
+   <!-- css for code syntax highlighting -->
+   <link rel="stylesheet" href="lib/syntaxhighlighter/styles/shCore.css"/>
+   <link rel="stylesheet" href="lib/syntaxhighlighter/styles/shThemeMidnight.css"/>
+   <link rel="stylesheet" href="custom.css">
+   <script src="js/jquery-1.8.1.min.js"></script>
+   <script src="js/require.js"></script>
 </head>
 <body class="deck-container">
 
@@ -39,16 +39,23 @@
 </section>
 
 <section class="slide">
-    <h1>Spring Beatings</h1>
-
-    <h2 class="subtitle">or: How I Learned to Stop Worrying and Love the Magic</h2>
+   <h1>Spring Beatings</h1>
+   <img class="title-image" src="img/cowboy-bomb.jpg" alt="Yeehaw"/>
+   <h2 class="subtitle">or: How I Learned to Stop Worrying and Love the Magic</h2>
 </section>
 
 <section class="slide">
-    <h2>Getting Started</h2>
-    <ul>
-        <li>First step add Spring core dependency dependency</li>
-    </ul>
+   <h2>Spring Framework Overview</h2>
+   <img src="img/spring/spring-overview.png">
+</section>
+
+<section class="slide">
+   <h2>Getting Started</h2>
+   <ul>
+      <li>First step add Spring core dependency dependency</li>
+      <li>Exclude commons logging from Spring context</li>
+      <li>Use property or variable for Spring version numbers</li>
+   </ul>
     <pre class="brush: xml;">
 &lt;properties>
     &lt;spring.version>3.2.0.RELEASE&lt;/spring.version>
@@ -66,12 +73,12 @@
 &lt;/dependency>
     </pre>
 </section>
-<!-- test change -->
+
 <section class="slide">
-    <h2>AbstractSingletonProxyFactoryBean: Huh?</h2>
-    <ul>
-        <li>Second step of spring configuration: Enable Logging</li>
-    </ul>
+   <h2>AbstractSingletonProxyFactoryBean: Huh?</h2>
+   <ul>
+      <li>Second step of spring configuration: Enable Logging</li>
+   </ul>
     <pre class="brush: xml;">
 &lt;properties>
     &lt;logback-classic.version>1.0.9&lt;/logback-classic.version>
@@ -102,39 +109,39 @@
 </section>
 
 <section class="slide">
-    <h2>Brief pause for propaganda</h2>
-    <ul>
-        <li>Favor constructor injection</li>
-        <li>Avoid property injection</li>
-        <li>Prefer autowiring and component scanning instead of manual configuration</li>
-        <li>Annotations > XML</li>
-        <li>Prefer Spring's way</li>
-    </ul>
+   <h2>Brief pause for propaganda</h2>
+   <ul>
+      <li>Favor constructor injection</li>
+      <li>Avoid property injection</li>
+      <li>Prefer autowiring and component scanning instead of manual configuration</li>
+      <li>Annotations > XML</li>
+      <li>Prefer Spring's way</li>
+   </ul>
 </section>
 
 <section class="slide">
-    <h2>Application Context</h2>
-    <ul>
-        <li>Responsible for controlling the creation and lifecycle of the Beans in the application</li>
-        <li>Should rarely be referenced to resolve an object</li>
-        <li>Creating an application context to consume an xml configuration</li>
-    </ul>
-    <img src="img/spring/container-magic.png"/>
+   <h2>Application Context</h2>
+   <ul>
+      <li>Responsible for controlling the creation and lifecycle of the Beans in the application</li>
+      <li>Should rarely be referenced to resolve an object</li>
+      <li>Creating an application context to consume an xml configuration</li>
+   </ul>
+   <img src="img/spring/container-magic.png"/>
 </section>
 
 <section class="slide">
-    <h2>Application Context Configuration</h2>
-    <ul>
-        <li>XML files, annotated classes or a mixture of the two can be used</li>
-        <li>Annotated configuration files will override xml files</li>
-        <li>Example annotated configuration class
+   <h2>Application Context Configuration</h2>
+   <ul>
+      <li>XML files, annotated classes or a mixture of the two can be used</li>
+      <li>Annotated configuration files will override xml files</li>
+      <li>Example annotated configuration class
             <pre class="brush: groovy;">
 @Configuration
 class SampleSpringAnnotatedConfiguration {
 }
             </pre>
-        </li>
-        <li>Example xml configuration file
+      </li>
+      <li>Example xml configuration file
     <pre class="brush: xml;">
 &lt;?xml version="1.0" encoding="UTF-8"?>
 &lt;beans xmlns="http://www.springframework.org/schema/beans"
@@ -144,14 +151,14 @@ class SampleSpringAnnotatedConfiguration {
                            http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 &lt;/beans>
                 </pre>
-        </li>
-    </ul>
+      </li>
+   </ul>
 </section>
 
 <section class="slide">
-    <h2>Application Context Creation</h2>
+   <h2>Application Context Creation</h2>
 
-    <h3>Creating an Application Context With an Xml Configuration</h3>
+   <h3>Creating an Application Context With an Xml Configuration</h3>
     <pre class="brush: groovy;">
 class Main {
     public static void main(String[] args) {
@@ -162,7 +169,7 @@ class Main {
     }
 }
     </pre>
-    <h3>Creating an Application Context With an Annotated Configuration Class</h3>
+   <h3>Creating an Application Context With an Annotated Configuration Class</h3>
     <pre class="brush: groovy;">
 class Main {
     public static void main(String[] args) {
@@ -176,16 +183,16 @@ class Main {
 </section>
 
 <section class="slide">
-    <h2>Beans</h2>
-    <ul>
-        <li>Has a lifetime controlled by Spring</li>
-        <li>Can be defined by either an XML configuration file or via a an annotated class configuration</li>
-        <li>Configuration by XML
+   <h2>Beans</h2>
+   <ul>
+      <li>Has a lifetime controlled by Spring</li>
+      <li>Can be defined by either an XML configuration file or via a an annotated class configuration</li>
+      <li>Configuration by XML
         <pre class="brush: xml;">
     &lt;beans:bean class="lt.nsg.SpringDemo.SpringSimpleBeanDemo.service.Service" />
         </pre>
-        </li>
-        <li>Configuration by annotated configuration class
+      </li>
+      <li>Configuration by annotated configuration class
         <pre class="brush: groovy;">
 @Configuration
 class SampleSpringAnnotatedConfiguration {
@@ -195,53 +202,85 @@ class SampleSpringAnnotatedConfiguration {
     }
 }
         </pre>
-        </li>
-    </ul>
+      </li>
+   </ul>
 </section>
 
 <section class="slide">
-    <h2>Bean Scopes</h2>
+   <h2>Bean Scopes</h2>
 
-    <div class="image-container">
-        <div class="image-container-left">
-            <ul>
-                <li><img src="img/spring/singleton.png"/></li>
-                <li>Singleton annotation configuration example
+   <div class="image-container">
+      <div class="image-container-left">
+         <ul>
+            <li><img src="img/spring/singleton.png"/></li>
+            <li>Singleton annotation configuration example
             <pre class="brush: groovy;">
 @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
 class Service {
 }
             </pre>
-                </li>
-                <li>Singleton xml configuration example
+            </li>
+            <li>Singleton xml configuration example
                 <pre class="brush: xml;">
 &lt;beans:bean class="Service" scope="singleton"/>
                 </pre>
-                </li>
-            </ul>
-        </div>
-        <div class="image-container-right">
-            <ul>
-                <li><img src="img/spring/prototype.png"/></li>
-                <li>Prototype configuration annotation example
+            </li>
+         </ul>
+      </div>
+      <div class="image-container-right">
+         <ul>
+            <li><img src="img/spring/prototype.png"/></li>
+            <li>Prototype configuration annotation example
             <pre class="brush: groovy;">
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 class Service {
 }
             </pre>
-                </li>
-                <li>Prototype xml configuration example
+            </li>
+            <li>Prototype xml configuration example
                 <pre class="brush: xml;">
                     &lt;beans:bean class="Service" scope="prototype"/>
                 </pre>
-                </li>
-            </ul>
-        </div>
-    </div>
+            </li>
+         </ul>
+      </div>
+   </div>
 </section>
 
 <section class="slide">
-    <h2>Property Source</h2>
+   <h2>Bean Lifecycle</h2>
+   <ul>
+      <li>Spring can call an initialization or destroy methods to control an objects lifecycle</li>
+      <li>This does not tightly tie your objects to the Spring framework</li>
+      <li>Can be configured in code</li>
+      <li>Implementing the Spring interfaces is not required. If a method named afterPropertiesSet or destroy exists they will be called at the appropriate time</li>
+   </ul>
+   <pre class="brush: groovy;">
+class ExampleBean implements InitializingBean, DisposableBean {
+    void afterPropertiesSet() { /* initialization */ }
+    void destroy() { /* destruction */ }
+}
+   </pre>
+   <ul>
+      <li>Example XML configuration which uses the convential spring method names</li>
+   </ul>
+   <pre class="brush: xml;">
+&lt;bean id="exampleInitBean" class="ExampleBean"
+    destroy-method="destroy" init-method="afterPropertiesSet"/>
+   </pre>
+   <ul>
+      <li>Can configure custom convention name for both destroy-method and init-method via a top level XML</li>
+      <li>This will override the default Spring convention</li>
+   </ul>
+   <pre class="brush: xml;">
+&lt;beans default-init-method="begin" default-destroy-method="end">
+      &lt;bean id="exampleBean" class="StarterStopper">
+&lt;/beans>
+   </pre>
+</section>
+
+<section class="slide">
+   <h2>Property Source</h2>
     <pre class="brush: groovy;">
 @Configuration
 @PropertySource("classpath:lt/nsg/gms/propertysource/property-source-test.properties")
@@ -275,34 +314,11 @@ public class PropertyService {
 </section>
 
 <section class="slide">
-    <h2>Profiles</h2>
-    <pre class="brush: groovy;">
-@ContextConfiguration(classes = ProfilesTestConfiguration)
-@ActiveProfiles("test")
-class ProfileTest extends Specification {
-    @Autowired MissleController misscleControl
-    def "should get services that are in the test profile"() {
-        expect: !misscleControl.launch()
-    }
-}
-interface MissleController { boolean launch() }
-
-@Component @Profile("production")
-class Pentagon implements MissleController { boolean launch() { true } }
-
-@Component @Profile("test")
-class MockMissleController implements MissleController { boolean launch() { false } }
-
-@Configuration @ComponentScan(basePackageClasses = ProfileTest)
-class ProfilesTestConfiguration {}
-    </pre>
-</section>
-
-<section class="slide">
-    <h2>Meta Annotations</h2>
-    <ul>
-        <li>Due to what seems to be a bug in groovy an example meta-annotation in java</li>
-    </ul>
+   <h2>Meta Annotations</h2>
+   <ul>
+      <li>Due to what seems to be a bug in groovy an example meta-annotation in java</li>
+      <li>Reduces duplicatio</li>
+   </ul>
     <pre class="brush: java;">
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
@@ -314,7 +330,75 @@ public @interface TestComponent {
 </section>
 
 <section class="slide">
-    <h2>Testing Property Sources</h2>
+   <h2>Profiles</h2>
+    <pre class="brush: groovy;">
+interface MissleController { boolean launch() }
+
+@Component @Profile("production")
+class Pentagon implements MissleController { boolean launch() { true } }
+
+@Component @Profile("test")
+class MockMissleController implements MissleController { boolean launch() { false } }
+
+@Configuration @ComponentScan(basePackageClasses = MissleController)
+class ProfilesConfiguration {}
+    </pre>
+</section>
+
+<section class="slide">
+   <h2>Spring AOP - Aspect Oriented Programming</h2>
+   <ul>
+      <li>Spring provides rich support for AOP</li>
+      <li>Used to implement bean scoping and other cross cutting Spring services such as annotation transaction management</li>
+      <li>Can use either J2SE dynamic proxies or CGLIB proxies</li>
+      <li>J2SE dynamic proxies can only be used with interfaces</li>
+      <li>CGLIB proxies can be used with classes as well as interfaces</li>
+      <li>Starting with Spring 3.2 CGLIB is now included in the Spring distribution so it does not need to be added as an explicit dependency</li>
+      <li>Proxied objects (not interfaces) will have their constructor called twice</li>
+      <li>Can be enabled globally in XML</li>
+      <li>Proxied classes can be autowired but they MUST provide no argument constructor</li>
+   </ul>
+   <pre class="brush: xml;">
+&lt;aop:config proxy-target-class="true">
+   </pre>
+   <ul>
+      <li>Can be set explicitly with the @Scope annotation</li>
+   </ul>
+   <pre class="brush: groovy;">
+@Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON, proxyMode = ScopedProxyMode.TARGET_CLASS)
+class Service {
+}
+   </pre>
+</section>
+
+<section class="slide">
+   <h2>Testing Spring</h2>
+   <ul>
+      <li>Spring supports testing via JUnit</li>
+      <li>There is a Spock extension for testing spring</li>
+      <li>Test context is cached based on the configuration resources loaded, not rebuilt every test</li>
+      <li>@ContextConfiguration annotation is used to specify the context that will be used during the tests</li>
+      <li>@ActiveProfiles annotation is used to specify which profiles are active during the test</li>
+      <li>@DirtiesContext annotation can be used to control if a test causes a context to be rebuilt after a test, test class, or after every test.</li>
+      <li>@TestExecutionListeners can be used to add context listeners</li>
+      <li>Example test execution listeners</li>
+      <ul>
+         <li>@DependencyInjectionTestExecutionListener</li>
+         <ul>
+            <li>Will allow the use of @Autowired properties in test classes</li>
+            <li>This is enabled by default</li>
+         </ul>
+         <li>@TransactionalTestExecutionListener</li>
+         <ul>
+            <li>Will run tests annotated with @Transactional in a transaction and roll back any changes after the test is run</li>
+            <li>When testing ORM code (Specifically hibernate) the ORM must flush all changes to the database to avoid false positives</li>
+         </ul>
+      </ul>
+   </ul>
+</section>
+
+<section class="slide">
+   <h2>Testing Property Sources</h2>
     <pre class="brush: groovy;">
 @ContextConfiguration(classes = PropertySourceTestConfiguration)
 class PropertySourceTest extends Specification {
@@ -342,9 +426,9 @@ class PropertySourceTest extends Specification {
 </section>
 
 <section class="slide">
-    <h2>Testing Profiles</h2>
+   <h2>Testing Profiles</h2>
     <pre class="brush: groovy;">
-@ContextConfiguration(classes = ProfilesTestConfiguration)
+@ContextConfiguration(classes = ProfilesConfiguration)
 @ActiveProfiles("test")
 class ProfileTest extends Specification {
     @Autowired MissleController misscleControl
@@ -352,29 +436,19 @@ class ProfileTest extends Specification {
         expect: !missleControl.launch()
     }
 }
-interface MissleController { boolean launch() }
-
-@Component @Profile("production")
-class Pentagon implements MissleController { boolean launch() { true } }
-
-@Component @Profile("test")
-class MockMissleController implements MissleController { boolean launch() { false } }
-
-@Configuration @ComponentScan(basePackageClasses = ProfileTest)
-class ProfilesTestConfiguration {}
     </pre>
 </section>
 
 <section class="slide">
-    <h2>Final Notes</h2>
-    <ul>
-        <li>The Spring documentation is outstanding</li>
-        <li>Fighting the framework will bite you every time</li>
-    </ul>
+   <h2>Final Notes</h2>
+   <ul>
+      <li>The Spring documentation is outstanding</li>
+      <li>Fighting the framework will bite you every time</li>
+   </ul>
 </section>
 
 <section class="slide">
-    <h1>Fin</h1>
+   <h1>Fin</h1>
 </section>
 
 <!-- End slides. -->
@@ -389,17 +463,17 @@ class ProfilesTestConfiguration {}
 
 <!-- deck.status snippet -->
 <p class="deck-status">
-    <span class="deck-status-current"></span>
-    /
-    <span class="deck-status-total"></span>
+   <span class="deck-status-current"></span>
+   /
+   <span class="deck-status-total"></span>
 </p>
 
 <!-- deck.goto snippet -->
 <form action="." method="get" class="goto-form">
-    <label for="goto-slide">Go to slide:</label>
-    <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
-    <datalist id="goto-datalist"></datalist>
-    <input type="submit" value="Go">
+   <label for="goto-slide">Go to slide:</label>
+   <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+   <datalist id="goto-datalist"></datalist>
+   <input type="submit" value="Go">
 </form>
 
 <!-- deck.hash snippet -->
@@ -408,59 +482,60 @@ class ProfilesTestConfiguration {}
 <!-- End extension snippets. -->
 
 <script>
-    $('.slide').hide();
-    requirejs.config({
-                         paths: {
-                             shCore: "lib/syntaxhighlighter/scripts/shCore",
-                             brush: "lib/syntaxhighlighter/scripts",
-                             deck: "core/deck.core",
-                             e: "extensions/"
-                         },
-                         shim: {
-                             'shCore': {
-                                 exports: function (c) {
-                                     return {SyntaxHighlighter: SyntaxHighlighter};
-                                 }
-                             },
-                             'brush/shBrushXml': {
-                                 deps: ['shCore']
-                             },
-                             'brush/shBrushGroovy': {
-                                 deps: ['shCore']
-                             },
-                             'brush/shBrushJava': {
-                                 deps: ['shCore']
-                             },
-                             'brush/shBrushJScript': {
-                                 deps: ['shCore']
-                             }
-                         }
-                     });
-    require(['deck'], function (deck) {
-        require(['shCore', 'brush/shBrushGroovy', 'brush/shBrushJScript', 'brush/shBrushXml', 'brush/shBrushJava'], function (SyntaxHighlighter, groovy, js, java) {
-            SyntaxHighlighter.SyntaxHighlighter.defaults['gutter'] = false;
-            SyntaxHighlighter.SyntaxHighlighter.defaults['toolbar'] = false;
-            SyntaxHighlighter.SyntaxHighlighter.highlight();
+   $('.slide').hide();
+   requirejs.config({
+      paths: {
+         shCore: "lib/syntaxhighlighter/scripts/shCore",
+         brush: "lib/syntaxhighlighter/scripts",
+         deck: "core/deck.core",
+         e: "extensions/"
+      },
+      shim: {
+         'shCore': {
+            exports: function (c) {
+               return {SyntaxHighlighter: SyntaxHighlighter};
+            }
+         },
+         'brush/shBrushXml': {
+            deps: ['shCore']
+         },
+         'brush/shBrushGroovy': {
+            deps: ['shCore']
+         },
+         'brush/shBrushJava': {
+            deps: ['shCore']
+         },
+         'brush/shBrushJScript': {
+            deps: ['shCore']
+         }
+      }
+   });
+   require(['deck'], function (deck) {
+      require(['shCore', 'brush/shBrushGroovy', 'brush/shBrushJScript', 'brush/shBrushXml', 'brush/shBrushJava'],
+              function (SyntaxHighlighter, groovy, js, java) {
+                 SyntaxHighlighter.SyntaxHighlighter.defaults['gutter'] = false;
+                 SyntaxHighlighter.SyntaxHighlighter.defaults['toolbar'] = false;
+                 SyntaxHighlighter.SyntaxHighlighter.highlight();
 
-            require(["extensions/hash/deck.hash",
-                        "extensions/hash/deck.hash" ,
-                        "extensions/menu/deck.menu" ,
-                        "extensions/goto/deck.goto" ,
-                        "extensions/status/deck.status" ,
-                        "extensions/navigation/deck.navigation" ,
-                        "extensions/scale/deck.scale" ,
-//                    "extensions/toc/deck.toc" ,
-                        "extensions/clone/deck.clone"], function () {
+                 require(["extensions/hash/deck.hash",
+                    "extensions/hash/deck.hash" ,
+                    "extensions/menu/deck.menu" ,
+                    "extensions/goto/deck.goto" ,
+                    "extensions/status/deck.status" ,
+                    "extensions/navigation/deck.navigation" ,
+                    "extensions/scale/deck.scale" ,
+                    "extensions/toc/deck.toc" ,
+                    "extensions/clone/deck.clone"], function () {
 
-                $(function () {
-                    "use strict";
-                    $.extend(true, $.deck.defaults, { countNested: false });
-                    $.deck('.slide');
-                    $('.slide').show();
-                });
-            });
-        });
-    });
+                    $(function () {
+                       "use strict";
+                       $.extend(true, $.deck.defaults, { countNested: false });
+                       $.deck('.slide');
+                       $('.slide').show();
+                    });
+                 });
+              });
+   });
 </script>
 </body>
 </html>
