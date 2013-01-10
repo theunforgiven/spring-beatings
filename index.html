@@ -155,7 +155,8 @@ class SampleSpringAnnotatedConfiguration {
     <pre class="brush: groovy;">
 class Main {
     public static void main(String[] args) {
-        def applicationContext = GenericXmlApplicationContext(new ClassPathResource("/applicationContext.xml"))
+        def applicationConfig = new ClassPathResource("/applicationContext.xml")
+        def applicationContext = GenericXmlApplicationContext(applicationConfig)
         def service = applicationContext.getBean(Service)
         service.run()
     }
@@ -165,7 +166,8 @@ class Main {
     <pre class="brush: groovy;">
 class Main {
     public static void main(String[] args) {
-        def applicationContext = new AnnotationConfigApplicationContext(DemoAnnotationConfiguration.class)
+        def configClass = DemoAnnotationConfiguration.class
+        def applicationContext = new AnnotationConfigApplicationContext(configClass)
         def service = applicationContext.getBean(Service)
         service.run()
     }
