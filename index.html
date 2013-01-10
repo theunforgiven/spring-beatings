@@ -359,6 +359,7 @@ class ProfilesConfiguration {}
       <li>Proxied objects (not interfaces) will have their constructor called twice</li>
       <li>Can be enabled globally in XML</li>
       <li>Proxied classes can be autowired but they MUST provide no argument constructor</li>
+      <li>Classes which are proxied must be retrieved via the Spring application context</li>
    </ul>
    <pre class="brush: xml;">
 &lt;aop:config proxy-target-class="true">
@@ -384,27 +385,47 @@ class Service {
       <li>@DirtiesContext annotation can be used to control if a test causes a context to be rebuilt after a test, test class, or after every test.</li>
       <li>@TestExecutionListeners can be used to add context listeners</li>
       <li>Example test execution listeners</li>
-      <li>
+      <ul>
+         <li>@DependencyInjectionTestExecutionListener</li>
          <ul>
-            <li>@DependencyInjectionTestExecutionListener</li>
-            <li>
-               <ul>
-                  <li>Will allow the use of @Autowired properties in test classes</li>
-                  <li>This is enabled by default</li>
-               </ul>
-            </li>
-            <li>@TransactionalTestExecutionListener</li>
-            <li>
-               <ul>
-                  <li>Will run tests annotated with @Transactional in a transaction and roll back any changes after the test is run</li>
-                  <li>When testing ORM code (Specifically hibernate) the ORM must flush all changes to the database to avoid false positives</li>
-               </ul>
-            </li>
+            <li>Will allow the use of @Autowired properties in test classes</li>
+            <li>This is enabled by default</li>
          </ul>
-      </li>
+         <li>@TransactionalTestExecutionListener</li>
+         <ul>
+            <li>Will run tests annotated with @Transactional in a transaction and roll back any changes after the test is run</li>
+            <li>When testing ORM code (Specifically hibernate) the ORM must flush all changes to the database to avoid false positives</li>
+         </ul>
+      </ul>
    </ul>
 </section>
-
+<section class="slide">
+   <h2>Briefly: @Transactional</h2>
+   <ul>
+      <li>Spring can wrap methods wrapped in @Transactional in a transaction</li>
+      <li>Nested calls which call other @Transactional annotated methods have options to join the transaction, start a new transaction, or error to prevent nesting transactional method calls</li>
+      <li>Spring coorindates the transactions via a TransactionManager</li>
+      <li>The TransactionManager uses the datasource to coordinate transactions between calls</li>
+      <li>Trnasactions can be scoped to a web request (if using Spring MVC) or to a thread local variable</li>
+      <li>It is possible to mix methods annotated with @Transactional and programmatic control of transactions via </li>
+   </ul>
+   <pre class="brush: groovy;">
+public class SimpleService {
+    private final TransactionTemplate template;
+    public SimpleService(PlatformTransactionManager transactionManager) {
+        this.template = new TransactionTemplate(transactionManager)
+    }
+    public Object someServiceMethod() {
+        return template.execute(new TransactionCallback() {
+            public Object doInTransaction(TransactionStatus status) {
+               //Method executed in transaction
+               //Rolled back if an exception is thrown
+            }
+        })
+    }
+}
+   </pre>
+</section>
 <section class="slide">
    <h2>Testing Property Sources</h2>
     <pre class="brush: groovy;">
@@ -452,6 +473,9 @@ class ProfileTest extends Specification {
    <ul>
       <li>The Spring documentation is outstanding</li>
       <li>Fighting the framework will bite you every time</li>
+      <li>Complex configuration make small steps easier while making large changes</li>
+      <li>Avoid configuration complexity</li>
+      <li>Referencing Spring directly should be minimized as much as possible</li>
    </ul>
 </section>
 
