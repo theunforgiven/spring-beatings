@@ -1,4 +1,4 @@
-/* remove scroll bars from syntax highligher widgets */
+/* remove scroll bars from syntax highligher widgets  */
 .syntaxhighlighter { overflow-y: hidden !important; }
 
 .image-container div ul li:first-child {
